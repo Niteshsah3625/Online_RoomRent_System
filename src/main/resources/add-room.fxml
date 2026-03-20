@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.roomrent.controller.AddRoomController"
+            prefWidth="720" prefHeight="600"
+            styleClass="root-pane">
+
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="16" prefHeight="56">
+            <Text text="🏠 Room Rent System" styleClass="navbar-brand"/>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#handleCancel" styleClass="btn-outline-sm"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane-flat">
+            <VBox styleClass="form-panel" spacing="18" alignment="TOP_CENTER" maxWidth="600">
+
+                <Label fx:id="formTitleLabel" text="Add New Room" styleClass="form-heading"/>
+
+                <GridPane hgap="16" vgap="12" maxWidth="560">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <Label text="Room Title *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="Location *"   styleClass="field-label" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <TextField fx:id="titleField"    promptText="e.g. Cozy Single Room" styleClass="text-field-custom"
+                               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="locationField" promptText="e.g. Baneshwor, Kathmandu" styleClass="text-field-custom"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="Price / Month (Rs.) *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <Label text="Max Occupants *"        styleClass="field-label" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <TextField fx:id="priceField"   promptText="e.g. 8000" styleClass="text-field-custom"
+                               GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <TextField fx:id="maxOccField"  promptText="e.g. 2"    styleClass="text-field-custom"
+                               GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <Label text="Room Type" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <ComboBox fx:id="typeCombo" maxWidth="Infinity" styleClass="combo-custom"
+                              GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                </GridPane>
+
+                <VBox spacing="6" maxWidth="560">
+                    <Label text="Description" styleClass="field-label"/>
+                    <TextArea fx:id="descArea" promptText="Describe the room, nearby facilities, rules…"
+                              prefHeight="90" wrapText="true" styleClass="text-area-custom"/>
+                </VBox>
+
+                <VBox spacing="8" maxWidth="560">
+                    <Label text="Amenities" styleClass="field-label"/>
+                    <HBox spacing="20">
+                        <CheckBox fx:id="wifiCheck"      text="WiFi"       styleClass="check-custom"/>
+                        <CheckBox fx:id="parkingCheck"   text="Parking"    styleClass="check-custom"/>
+                        <CheckBox fx:id="furnitureCheck" text="Furnished"  styleClass="check-custom"/>
+                    </HBox>
+                </VBox>
+
+                <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" maxWidth="560"/>
+
+                <HBox spacing="14" maxWidth="560">
+                    <Button fx:id="saveButton" text="Save Room" onAction="#handleSave"
+                            styleClass="btn-primary" prefHeight="42" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Button text="Cancel" onAction="#handleCancel"
+                            styleClass="btn-outline"  prefHeight="42" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

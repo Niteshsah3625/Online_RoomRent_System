@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.roomrent.controller.TenantDashboardController"
+            prefWidth="1150" prefHeight="760"
+            styleClass="root-pane">
+
+    <!-- ── Navbar ── -->
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="16" prefHeight="60">
+            <Text text="🏠 Room Rent System" styleClass="navbar-brand"/>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="navbar-welcome"/>
+            <Button text="👤 Profile" onAction="#handleProfile" styleClass="btn-outline-sm"/>
+            <Button text="⟳ Refresh" onAction="#handleRefresh" styleClass="btn-outline-sm"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="btn-danger-sm"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="16" style="-fx-padding: 20;">
+
+            <!-- Search Bar Card -->
+            <VBox styleClass="card" spacing="10">
+                <Text text="Search Available Rooms" styleClass="section-title"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchKeyword"  promptText="Keyword (title, desc…)" prefWidth="180" styleClass="text-field-custom"/>
+                    <TextField fx:id="searchLocation" promptText="Location"               prefWidth="160" styleClass="text-field-custom"/>
+                    <TextField fx:id="minPriceField"  promptText="Min Price"              prefWidth="100" styleClass="text-field-custom"/>
+                    <TextField fx:id="maxPriceField"  promptText="Max Price"              prefWidth="100" styleClass="text-field-custom"/>
+                    <ComboBox  fx:id="roomTypeCombo"  prefWidth="130" styleClass="combo-custom"/>
+                    <Button text="🔍 Search" onAction="#handleSearch"      styleClass="btn-primary-sm"/>
+                    <Button text="✘ Clear"  onAction="#handleClearSearch"  styleClass="btn-outline-sm"/>
+                </HBox>
+            </VBox>
+
+            <!-- Main split: rooms + detail -->
+            <HBox spacing="16" VBox.vgrow="ALWAYS">
+
+                <!-- Rooms table + Book button -->
+                <VBox styleClass="card" spacing="10" HBox.hgrow="ALWAYS">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Text text="Available Rooms" styleClass="section-title" HBox.hgrow="ALWAYS"/>
+                        <HBox HBox.hgrow="ALWAYS"/>
+                        <Button text="📅 Book Selected Room" onAction="#handleBookRoom" styleClass="btn-primary-sm"/>
+                    </HBox>
+                    <TableView fx:id="roomTable" prefHeight="270" styleClass="table-view-custom" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colTitle"    text="Title"      prefWidth="170"/>
+                            <TableColumn fx:id="colLocation" text="Location"   prefWidth="140"/>
+                            <TableColumn fx:id="colPrice"    text="Price/Mo"   prefWidth="110"/>
+                            <TableColumn fx:id="colRoomType" text="Type"       prefWidth="90"/>
+                            <TableColumn fx:id="colAmenities" text="Amenities" prefWidth="160"/>
+                            <TableColumn fx:id="colOwner"    text="Owner"      prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Room Detail Panel -->
+                <VBox styleClass="card detail-panel" spacing="12" prefWidth="230">
+                    <Text text="Room Details" styleClass="section-title"/>
+                    <Label fx:id="detailTitle"      text="Select a room" styleClass="detail-title-label" wrapText="true"/>
+                    <Label fx:id="detailLocation"   text="" styleClass="detail-info" wrapText="true"/>
+                    <Label fx:id="detailPrice"      text="" styleClass="detail-price"/>
+                    <Label fx:id="detailAmenities"  text="" styleClass="detail-info" wrapText="true"/>
+                    <Separator/>
+                    <Label fx:id="detailOwner"      text="" styleClass="detail-info"/>
+                    <Label fx:id="detailOwnerPhone" text="" styleClass="detail-info"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- My Bookings -->
+            <VBox styleClass="card" spacing="10">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Text text="My Bookings" styleClass="section-title" HBox.hgrow="ALWAYS"/>
+                    <HBox HBox.hgrow="ALWAYS"/>
+                    <Button text="Cancel Booking" onAction="#handleCancelBooking" styleClass="btn-danger-sm"/>
+                </HBox>
+                <TableView fx:id="bookingTable" prefHeight="180" styleClass="table-view-custom">
+                    <columns>
+                        <TableColumn fx:id="colRoomTitle"  text="Room"       prefWidth="200"/>
+                        <TableColumn fx:id="colStartDate"  text="Start Date" prefWidth="120"/>
+                        <TableColumn fx:id="colEndDate"    text="End Date"   prefWidth="120"/>
+                        <TableColumn fx:id="colAmount"     text="Amount"     prefWidth="120"/>
+                        <TableColumn fx:id="colBookStatus" text="Status"     prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+        </VBox>
+    </center>
+</BorderPane>

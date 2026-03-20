@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.roomrent.controller.BookRoomController"
+            prefWidth="680" prefHeight="560"
+            styleClass="root-pane">
+
+    <top>
+        <HBox styleClass="navbar" alignment="CENTER_LEFT" spacing="16" prefHeight="56">
+            <Text text="🏠 Room Rent System" styleClass="navbar-brand"/>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#handleCancel" styleClass="btn-outline-sm"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox styleClass="form-panel" spacing="20" alignment="TOP_CENTER" maxWidth="580">
+
+            <Text text="Book a Room" styleClass="form-heading"/>
+
+            <!-- Room Summary Card -->
+            <VBox styleClass="info-card" spacing="8" maxWidth="520">
+                <Text text="Room Summary" styleClass="section-title"/>
+                <Label fx:id="roomTitleLabel"    text=""  styleClass="detail-title-label"/>
+                <Label fx:id="roomLocationLabel" text=""  styleClass="detail-info"/>
+                <Label fx:id="roomPriceLabel"    text=""  styleClass="detail-price"/>
+                <Label fx:id="roomAmenitiesLabel" text="" styleClass="detail-info"/>
+            </VBox>
+
+            <!-- Date Pickers -->
+            <GridPane hgap="16" vgap="10" maxWidth="520">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
+                <Label text="Move-in Date *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label text="Move-out Date *" styleClass="field-label" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <DatePicker fx:id="startDatePicker" maxWidth="Infinity" styleClass="date-picker-custom"
+                            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="endDatePicker"   maxWidth="Infinity" styleClass="date-picker-custom"
+                            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+
+            <!-- Estimated amount -->
+            <HBox styleClass="info-card" alignment="CENTER_LEFT" spacing="12" maxWidth="520">
+                <Text text="Estimated Total:" styleClass="field-label"/>
+                <Label fx:id="estimatedAmountLabel" text="Rs. 0" styleClass="detail-price"/>
+            </HBox>
+
+            <!-- Message to owner -->
+            <VBox spacing="6" maxWidth="520">
+                <Label text="Message to Owner (optional)" styleClass="field-label"/>
+                <TextArea fx:id="messageArea" promptText="Introduce yourself, mention move-in requirements…"
+                          prefHeight="80" wrapText="true" styleClass="text-area-custom"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" maxWidth="520"/>
+
+            <HBox spacing="14" maxWidth="520">
+                <Button text="📅 Confirm Booking" onAction="#handleConfirmBooking"
+                        styleClass="btn-primary"  prefHeight="42" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button text="Cancel" onAction="#handleCancel"
+                        styleClass="btn-outline"  prefHeight="42" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>

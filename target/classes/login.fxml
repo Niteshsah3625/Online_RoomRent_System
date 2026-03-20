@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.roomrent.controller.LoginController"
+      alignment="CENTER" spacing="0"
+      prefWidth="900" prefHeight="600"
+      styleClass="root-pane">
+
+    <!-- Split layout: Left branding panel + Right form -->
+    <HBox fillHeight="true" VBox.vgrow="ALWAYS">
+
+        <!-- ── Left branding panel ── -->
+        <VBox styleClass="brand-panel" alignment="CENTER" spacing="20"
+              prefWidth="380" HBox.hgrow="NEVER">
+            <Text text="🏠" style="-fx-font-size:64px;"/>
+            <Text text="Online Room" styleClass="brand-title"/>
+            <Text text="Rent System" styleClass="brand-title"/>
+            <Text text="Find your perfect room easily."
+                  styleClass="brand-subtitle" wrappingWidth="280" textAlignment="CENTER"/>
+        </VBox>
+
+        <!-- ── Right login form ── -->
+        <VBox styleClass="form-panel" alignment="CENTER" spacing="18"
+              prefWidth="520" HBox.hgrow="ALWAYS" fillWidth="true">
+
+            <Text text="Welcome Back" styleClass="form-heading"/>
+            <Text text="Sign in to your account" styleClass="form-subheading"/>
+
+            <VBox spacing="6" maxWidth="340">
+                <Label text="Email Address" styleClass="field-label"/>
+                <TextField fx:id="emailField" promptText="Enter your email" styleClass="text-field-custom"/>
+            </VBox>
+
+            <VBox spacing="6" maxWidth="340">
+                <Label text="Password" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="text-field-custom"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" maxWidth="340"/>
+
+            <Button fx:id="loginButton" text="Sign In" onAction="#handleLogin"
+                    styleClass="btn-primary" maxWidth="340" prefHeight="44"/>
+
+            <HBox alignment="CENTER" spacing="6">
+                <Text text="Don't have an account?" styleClass="text-muted"/>
+                <Hyperlink text="Register here" onAction="#goToRegister" styleClass="link-text"/>
+            </HBox>
+
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,286 @@
+/* ═══════════════════════════════════════════════════════════
+   Online Room Rent System — Global Stylesheet
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Root / Background ───────────────────────────────────── */
+.root-pane {
+    -fx-background-color: #f0f2f5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ── Brand / Left Panel ──────────────────────────────────── */
+.brand-panel {
+    -fx-background-color: #1a3c5e;
+    -fx-padding: 40 30;
+}
+.brand-title {
+    -fx-fill: #ffffff;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+.brand-subtitle {
+    -fx-fill: #a8c4e0;
+    -fx-font-size: 14px;
+}
+
+/* ── Navbar ──────────────────────────────────────────────── */
+.navbar {
+    -fx-background-color: #1a3c5e;
+    -fx-padding: 0 24;
+}
+.navbar-brand {
+    -fx-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+.navbar-welcome {
+    -fx-text-fill: #a8c4e0;
+    -fx-font-size: 13px;
+}
+
+/* ── Form Panel ──────────────────────────────────────────── */
+.form-panel {
+    -fx-background-color: #ffffff;
+    -fx-padding: 40 50;
+    -fx-alignment: center;
+}
+.scroll-pane-flat {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane-flat > .viewport {
+    -fx-background-color: transparent;
+}
+.form-heading {
+    -fx-fill: #1a3c5e;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+.form-subheading {
+    -fx-fill: #6b7280;
+    -fx-font-size: 14px;
+}
+
+/* ── Cards ───────────────────────────────────────────────── */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0, 0, 2);
+}
+.info-card {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #d1d5db;
+    -fx-border-width: 1;
+    -fx-padding: 14;
+}
+.detail-panel {
+    -fx-min-width: 220;
+    -fx-max-width: 260;
+}
+
+/* ── Section Titles ──────────────────────────────────────── */
+.section-title {
+    -fx-fill: #1a3c5e;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* ── Stat Cards ──────────────────────────────────────────── */
+.stat-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1;
+    -fx-padding: 16 20;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0, 0, 2);
+    -fx-spacing: 6;
+}
+.stat-label {
+    -fx-fill: #6b7280;
+    -fx-font-size: 12px;
+}
+.stat-value {
+    -fx-text-fill: #1a3c5e;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+.stat-value-green {
+    -fx-text-fill: #16a34a;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+.stat-value-orange {
+    -fx-text-fill: #ea580c;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+/* ── Form Fields ─────────────────────────────────────────── */
+.field-label {
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-font-size: 12.5px;
+}
+.text-field-custom, .text-area-custom, .date-picker-custom {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+}
+.text-field-custom:focused, .text-area-custom:focused, .date-picker-custom:focused {
+    -fx-border-color: #2563eb;
+    -fx-background-color: #eff6ff;
+}
+.combo-custom {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.spinner-custom {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.check-custom {
+    -fx-font-size: 13px;
+    -fx-text-fill: #374151;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-primary {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-primary:hover { -fx-background-color: #1d4ed8; }
+
+.btn-primary-sm {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+}
+.btn-primary-sm:hover { -fx-background-color: #1d4ed8; }
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.btn-outline:hover { -fx-background-color: #f3f4f6; }
+
+.btn-outline-sm {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e2e8f0;
+    -fx-border-color: #4a6a8a;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-padding: 5 12;
+    -fx-cursor: hand;
+}
+.btn-outline-sm:hover { -fx-background-color: #2a4a6a; }
+
+.btn-danger-sm {
+    -fx-background-color: #dc2626;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-padding: 5 12;
+    -fx-cursor: hand;
+}
+.btn-danger-sm:hover { -fx-background-color: #b91c1c; }
+
+/* ── Labels ──────────────────────────────────────────────── */
+.error-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 12.5px;
+    -fx-padding: 4 8;
+    -fx-background-color: #fef2f2;
+    -fx-background-radius: 4;
+}
+.success-label {
+    -fx-text-fill: #16a34a;
+    -fx-font-size: 12.5px;
+    -fx-padding: 4 8;
+    -fx-background-color: #f0fdf4;
+    -fx-background-radius: 4;
+    -fx-border-color: #bbf7d0;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+}
+.text-muted {
+    -fx-fill: #9ca3af;
+    -fx-font-size: 12.5px;
+}
+.link-text {
+    -fx-text-fill: #2563eb;
+    -fx-font-size: 12.5px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+.detail-title-label {
+    -fx-text-fill: #1a3c5e;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.detail-info {
+    -fx-text-fill: #4b5563;
+    -fx-font-size: 12.5px;
+}
+.detail-price {
+    -fx-text-fill: #16a34a;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* ── Table View ──────────────────────────────────────────── */
+.table-view-custom {
+    -fx-background-color: transparent;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.table-view-custom .column-header-background {
+    -fx-background-color: #f1f5f9;
+}
+.table-view-custom .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-font-size: 12.5px;
+}
+.table-view-custom .table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+.table-view-custom .table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+.table-view-custom .table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+.table-view-custom .table-row-cell:hover {
+    -fx-background-color: #eff6ff;
+}

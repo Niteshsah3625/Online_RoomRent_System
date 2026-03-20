@@ -1,0 +1,74 @@
+═══════════════════════════════════════════════════════════════
+   ONLINE ROOM RENT SYSTEM — Complete Codebase (Flat View)
+   All 38 files in one folder for easy reading
+═══════════════════════════════════════════════════════════════
+
+── ENTRY POINT ──────────────────────────────────────────────
+  MainApp.java              JavaFX Application start, navigation
+
+── MODEL LAYER (src/main/java/com/roomrent/model/) ──────────
+  User.java                 Abstract base class (Abstraction)
+  Owner.java                Extends User (Inheritance)
+  Tenant.java               Extends User (Inheritance)
+  Room.java                 Room entity with enums & business methods
+  Booking.java              Booking entity with cost calculation
+
+── DAO LAYER (src/main/java/com/roomrent/dao/) ──────────────
+  UserDAO.java              Interface (Abstraction)
+  UserDAOImpl.java          MySQL implementation (Polymorphism)
+  RoomDAO.java              Interface (Abstraction)
+  RoomDAOImpl.java          MySQL + dynamic search
+  BookingDAO.java           Booking CRUD with JOINs
+
+── SERVICE LAYER (src/main/java/com/roomrent/service/) ──────
+  AuthService.java          Registration, login, validation
+  RoomService.java          Room CRUD business rules
+  BookingService.java       Booking workflow + room status sync
+
+── CONTROLLER LAYER (src/main/java/com/roomrent/controller/)
+  LoginController.java      Login screen logic
+  RegisterController.java   Registration form + role toggle
+  OwnerDashboardController  Room listings + booking management
+  TenantDashboardController Room search + booking requests
+  AddRoomController.java    Add / Edit room form
+  BookRoomController.java   Booking date form + cost preview
+  ProfileController.java    User profile edit + password change
+  RoomEditContext.java      Static context to pass Room between controllers
+
+── UTILITY LAYER (src/main/java/com/roomrent/util/) ─────────
+  DatabaseConnection.java   Singleton JDBC connection + auto DDL
+  PasswordUtil.java         SHA-256 hashing + validation helpers
+  SessionManager.java       Singleton session holder
+
+── VIEWS — FXML (src/main/resources/com/roomrent/views/) ────
+  login.fxml                Login screen
+  register.fxml             Registration screen
+  owner-dashboard.fxml      Owner main screen
+  tenant-dashboard.fxml     Tenant main screen
+  add-room.fxml             Add/Edit room form
+  book-room.fxml            Booking date + confirmation form
+  profile.fxml              User profile screen
+
+── VIEWS — STYLESHEET ───────────────────────────────────────
+  style.css                 Global JavaFX CSS (navy + blue theme)
+
+── MODULE / BUILD ───────────────────────────────────────────
+  module-info.java          Java 9+ module descriptor for JavaFX
+  pom.xml                   Maven dependencies + build config
+
+── DATABASE ─────────────────────────────────────────────────
+  database_setup.sql        Full DDL + sample data for MySQL
+
+── TESTS ────────────────────────────────────────────────────
+  TestSuite.java            44 unit tests, zero dependencies
+
+── DOCS ─────────────────────────────────────────────────────
+  README.md                 Setup + run instructions
+
+═══════════════════════════════════════════════════════════════
+  SETUP IN 3 STEPS:
+  1. Run database_setup.sql in MySQL Workbench
+  2. Edit DatabaseConnection.java → set your MySQL password
+  3. Run with Maven: mvn javafx:run
+     OR in IntelliJ: right-click MainApp.java → Run
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.roomrent.controller.RegisterController"
+      alignment="CENTER" spacing="0"
+      prefWidth="900" prefHeight="680"
+      styleClass="root-pane">
+
+    <HBox fillHeight="true" VBox.vgrow="ALWAYS">
+
+        <!-- Left panel -->
+        <VBox styleClass="brand-panel" alignment="CENTER" spacing="20"
+              prefWidth="340" HBox.hgrow="NEVER">
+            <Text text="🏠" style="-fx-font-size:60px;"/>
+            <Text text="Create Your" styleClass="brand-title"/>
+            <Text text="Account" styleClass="brand-title"/>
+            <Text text="Join as an owner to list rooms,&#10;or as a tenant to find them."
+                  styleClass="brand-subtitle" wrappingWidth="260" textAlignment="CENTER"/>
+        </VBox>
+
+        <!-- Right form -->
+        <ScrollPane fitToWidth="true" HBox.hgrow="ALWAYS" styleClass="scroll-pane-flat">
+            <VBox styleClass="form-panel" alignment="CENTER" spacing="14"
+                  fillWidth="true" minWidth="480">
+
+                <Text text="Create Account" styleClass="form-heading"/>
+
+                <GridPane hgap="14" vgap="10" maxWidth="420">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <Label text="Full Name" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="Email" styleClass="field-label" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <TextField fx:id="nameField" promptText="Full name" styleClass="text-field-custom"
+                               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="emailField" promptText="Email address" styleClass="text-field-custom"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="Phone" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <Label text="Role" styleClass="field-label" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <TextField fx:id="phoneField" promptText="Phone number" styleClass="text-field-custom"
+                               GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <ComboBox fx:id="roleCombo" maxWidth="Infinity" styleClass="combo-custom"
+                              GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <Label text="Password" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <Label text="Confirm Password" styleClass="field-label" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    <PasswordField fx:id="passwordField" promptText="Password (min 6 chars)" styleClass="text-field-custom"
+                                  GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                    <PasswordField fx:id="confirmPasswordField" promptText="Repeat password" styleClass="text-field-custom"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                    <Label fx:id="extraLabel" text="Occupation:" styleClass="field-label"
+                           GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                    <Label fx:id="peopleLabel" text="No. of People:" styleClass="field-label"
+                           GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                    <TextField fx:id="extraField" promptText="Occupation / Address" styleClass="text-field-custom"
+                               GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                    <Spinner fx:id="peopleSpinner" styleClass="spinner-custom" minWidth="120"
+                             GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                </GridPane>
+
+                <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" maxWidth="420"/>
+
+                <Button text="Create Account" onAction="#handleRegister"
+                        styleClass="btn-primary" maxWidth="420" prefHeight="44"/>
+
+                <HBox alignment="CENTER" spacing="6">
+                    <Text text="Already have an account?" styleClass="text-muted"/>
+                    <Hyperlink text="Sign in" onAction="#goToLogin" styleClass="link-text"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </HBox>
+</VBox>
